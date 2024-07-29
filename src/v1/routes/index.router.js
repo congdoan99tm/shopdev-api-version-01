@@ -28,10 +28,10 @@ router.get('/api/user', (req, res, next) => {
     ],
   });
 });
-const pdfPath = '/home/ubuntu/pdfs';
 
 router.get('/pdf', (req, res, next) => {
   try {
+    const pdfPath = '/home/ubuntu/pdfs';
     const fileName = 'CV-flutter_Lanh-Cong-Doan.pdf';
     const filePath = path.join(pdfPath, fileName);
 
@@ -48,4 +48,5 @@ router.get('/pdf', (req, res, next) => {
     });
   }
 });
+
 module.exports = router;
