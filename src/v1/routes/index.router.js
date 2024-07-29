@@ -29,15 +29,23 @@ router.get('/api/user', (req, res, next) => {
   });
 });
 const pdfPath = '/home/ubuntu/pdfs';
-router.get('/pdf', (req, res, next) => {
-  const fileName = 'CV-flutter_Lanh-Cong-Doan.pdf'; // Tên tệp PDF
-  const filePath = path.join(pdfPath, fileName);
 
-  res.sendFile(filePath, (err) => {
-    if (err) {
-      console.error('Error sending file:', err);
-      res.status(err.status).end();
-    }
-  });
+router.get('/pdf', (req, res, next) => {
+  try {
+    const fileName = 'CV-flutter_Lanh-Cong-Doan.pdf';
+    const filePath = path.join(pdfPath, fileName);
+
+    res.sendFile(filePath, (err) => {
+      if (err) {
+        console.error('Error sending file:', err);
+        res.status(err.status).end();
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: 'fail',
+      message: `${error}`,
+    });
+  }
 });
 module.exports = router;
