@@ -18,15 +18,26 @@ router.get('/api/user', (req, res, next) => {
         age: 27,
       },
       {
-        name: 'nacuto',
+        name: 'dep',
         age: 26,
       },
       {
-        name: 'Dương to Quá',
+        name: 'trai',
         age: 250,
       },
     ],
   });
 });
+const pdfPath = '/home/ubuntu/pdfs';
+router.get('/my-pro5', (req, res, next) => {
+  const fileName = 'CV-flutter_Lanh-Cong-Doan.pdf'; // Tên tệp PDF
+  const filePath = path.join(pdfPath, fileName);
 
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error('Error sending file:', err);
+      res.status(err.status).end();
+    }
+  });
+});
 module.exports = router;
