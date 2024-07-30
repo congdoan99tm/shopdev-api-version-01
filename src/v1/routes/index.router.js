@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
+router.get('/', (req, res, next) => {
+  res.status(200).json({
+    status: 'success',
+    message: 'this is home',
+  });
+});
 
 router.get('/check-status', (req, res, next) => {
   res.status(200).json({
