@@ -22,10 +22,10 @@ sudo systemctl restart nginx
 <!-- 2. Add domain to nginx configuration -->
 
 ```bash
-server_name shopdev.anonystick.com www.shopdev.anonystick.com;
+server_name chimxinh.online;
 
 location / {
-    proxy_pass http://localhost:3000; 
+    proxy_pass http://localhost:3051; 
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection 'upgrade';
