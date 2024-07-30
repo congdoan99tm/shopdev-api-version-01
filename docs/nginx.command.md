@@ -3,7 +3,7 @@
 <!-- 1. Reverse Proxy Nginx -->
 ```bash
 sudo apt-get install -y nginx 
-run ip, not wokring then htto open secirity
+Run IP, not working, then try to open security.
 cd /etc/nginx/sites-available
 
 sudo vim default

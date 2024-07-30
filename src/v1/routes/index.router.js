@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-
+const asyncHandler = require('../utils/asyncHandle')
 router.get('/check-status', (req, res, next) => {
   res.status(200).json({
     status: 'success',
@@ -30,7 +30,7 @@ router.get('/api/user', (req, res, next) => {
   });
 });
 
-router.get('/api/pdf', (req, res, next) => {
+router.get('/my-cv', (req, res, next) => {
   try {
     const pdfPath = '/home/ubuntu/pdfs';
     const fileName = 'CV-flutter_Lanh-Cong-Doan.pdf';

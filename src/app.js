@@ -3,7 +3,7 @@ const app = express();
 const helmet = require('helmet');
 const morgan = require('morgan');
 const compression = require('compression');
-
+const asyncHandler = require('./v1/utils/asyncHandle');
 //init dbs
 // require('./v1/databases/init.mongodb')
 // require('./v1/databases/init.redis')
@@ -23,7 +23,7 @@ app.use(
 );
 
 //router
-app.use(require('./v1/routes/index.router'));
+app.use(asyncHandler(require('./v1/routes/index.router')));
 
 // Error Handling Middleware called
 
@@ -37,7 +37,7 @@ app.use((error, req, res, next) => {
   return res.status(statusCode).json({
     status: 'error',
     code: statusCode,
-    stack: error.stack,
+    // stack: error.stack,
     message: error.message || 'Internal Server Error',
   });
 });

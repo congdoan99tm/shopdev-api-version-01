@@ -5,7 +5,7 @@ CYAN='\033[0;36m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-COMMIT='fix: rm /api'
+COMMIT='fix: 404 root'
 
 echo "${YELLOW}Pushing... ${NC}"
 
