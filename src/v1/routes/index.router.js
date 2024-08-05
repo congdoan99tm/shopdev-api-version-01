@@ -39,8 +39,8 @@ router.get('/api/user', (req, res, next) => {
 
 router.get('/my-cv', (req, res, next) => {
   try {
-    const pdfPath = '/home/ubuntu/pdfs';
-    const fileName = 'CV-flutter_Lanh-Cong-Doan.pdf';
+    const pdfPath = '/home/ubuntu/pdf';
+    const fileName = 'my-cv.pdf';
     const filePath = path.join(pdfPath, fileName);
 
     res.sendFile(filePath, (err) => {
